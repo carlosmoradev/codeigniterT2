@@ -30,6 +30,17 @@ class Persona extends CI_Model {
     }
 
     function insert($data){ /**$data es lo que se recibe como parametro */
+        $this->db->insert($this->table, $data);
+        return $this->db->insert_id();  /**buena practica retornar el id del registro insertado */
+    }
 
+    function update($id, $data){
+        $this->db->update($this->table, $data);
+        $this->db->where($this->table_id, $id);
+    }
+
+    function delete($id){
+        $this->db->delete($this->table);
+        $this->db->where($this->table_id, $id);
     }
 }

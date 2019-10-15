@@ -27,11 +27,11 @@ class Welcome extends CI_Controller {
 	 * @see https://codeigniter.com/user_guide/general/urls.html
 	 */
 	public function index(){
-		$this->load->model('Persona');
+		// $this->load->model('Persona');
 
-		$personas = $this->Persona->find(1);
+		// $personas = $this->Persona->findAll();
 
-		var_dump($personas);
+		// var_dump($personas);
 
 		$this->load->view('welcome_message');
 	}
