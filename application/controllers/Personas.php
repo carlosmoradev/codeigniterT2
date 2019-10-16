@@ -4,7 +4,11 @@ class Personas extends CI_Controller{
 
     public function __construct(){
         parent::__construct();
-        $this->load->helper('form');
+        
+    $this->load->helper('form');
+    $this->load->model('Persona');
+    $this->load->database();
+
     }
   
     public function index(){
@@ -18,10 +22,17 @@ class Personas extends CI_Controller{
 
     public function guardar(){
         $this->load->view('personas/guardar');
+        
+        
+            $data["nombre"] = $this->input->post("nombre");
+            $data["apellido"] = $this->input->post("apellido");
+            $data["edad"] = $this->input->post('edad');
 
+            $this->Persona->insert($data);
+        
     }
 
-    public function borrar(){
+    public function borrar($data){
 
     }
 
