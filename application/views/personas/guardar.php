@@ -12,10 +12,10 @@
 </head>
 
 <body>
-
     <div class="container ui">
-
-        <div class="form_group">
+            <h1>Guardar</h1>
+        <div class="ui form">
+        <div class="field">
             <?php
             echo form_open();
                 echo form_label('Nombre', 'nombre');
@@ -23,33 +23,34 @@
                 $input = array(
                     'name' => 'nombre',
                     'value' => '',
-                    'class' => 'form_control input_lg'
+                    'class' => 'ui form'
                 );
                 echo form_input($input);
             ?>
         </div>
 
-        <div class="form_group">
+        <div class="field">
             <?php
             echo form_label('Apellido', 'apellido');
 
             $input = array(
                 'name' => 'apellido',
                 'value' => '',
-                'class' => 'form_control input_lg'
+                'class' => 'ui form'
             );
             echo form_input($input);
+            echo "<br>";
             ?>
         </div>
 
-        <div class="form_group">
+        <div class="field">
             <?php
                 echo form_label('Edad', 'edad');
                 $input = array(
                     'name' => 'edad',
                     'type'  => 'number',
                     'value' => '',
-                    'class' => 'form_control input_lg'
+                    'class' => 'ui form'
                 );
             echo form_input($input);
             ?>
@@ -61,6 +62,7 @@
         var_dump($_POST);
         echo form_close();
         ?>
+        </div>
 
     </div>
 </body>
