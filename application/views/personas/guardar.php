@@ -39,7 +39,6 @@
                 'class' => 'ui form'
             );
             echo form_input($input);
-            echo "<br>";
             ?>
         </div>
 
@@ -58,8 +57,7 @@
 
         <?php 
         echo form_submit('$data', 'Enviar', "class='ui primary button'" ); 
-        // var_dump($_GET);
-        var_dump($_POST);
+        
         echo form_close();
         ?>
         </div>

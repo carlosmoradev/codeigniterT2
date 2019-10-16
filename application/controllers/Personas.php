@@ -17,7 +17,8 @@ class Personas extends CI_Controller{
     }
 
     public function listado(){
-
+        $this->load->view('personas/listado');
+        // $this->Persona->listAll($data);
     }
 
     public function guardar(){
@@ -27,7 +28,6 @@ class Personas extends CI_Controller{
             $data["nombre"] = $this->input->post("nombre");
             $data["apellido"] = $this->input->post("apellido");
             $data["edad"] = $this->input->post('edad');
-
             $this->Persona->insert($data);
         
     }
