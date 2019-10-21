@@ -6,7 +6,7 @@ class Personas extends CI_Controller{
         parent::__construct();
         
     $this->load->helper('form');
-    $this->load->model('Persona');
+    $this->load->model('Persona_model');
     $this->load->database();
 
     }
@@ -23,13 +23,10 @@ class Personas extends CI_Controller{
 
     public function guardar(){
         $this->load->view('personas/guardar');
-        
-        
             $data["nombre"] = $this->input->post("nombre");
             $data["apellido"] = $this->input->post("apellido");
             $data["edad"] = $this->input->post('edad');
-            $this->Persona->insert($data);
-        
+        $this->Persona_model->insert($data);
     }
 
     public function borrar($data){
